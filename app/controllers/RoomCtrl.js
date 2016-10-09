@@ -11,7 +11,7 @@ angular.module('chatMod').controller('RoomCtrl', function ($rootScope, $scope, $
                 $rootScope.errorMsg = result.msg
             }
         });
-    $scope.socket = io.connect('ws://localhost:8080');
+    $scope.socket = io.connect('/');
     $scope.socket.on('connect', function () {
         console.log('连接成功')
     });

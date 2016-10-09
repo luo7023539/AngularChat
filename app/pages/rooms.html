@@ -1,0 +1,29 @@
+     <div class="panel panel-primary" style="margin-left:-25px">
+         <div class="panel-heading">
+             <input type="text" class="form-control" ng-model="keyword">
+         </div>
+         <div class="panel-body">
+             <div class="row">
+                 <div class="col-sm-3" ng-repeat="room in rooms |filter:keyword track by $index">
+                    <div class="panel panel-default" ng-click="toRoom(room._id)">
+                        <div class="panel-body">
+                            <h3 class="text-center">{{room.name}}</h3>
+                        </div>
+                        <div class="panel-footer">
+                            <p class="text-center">本房间在线 {{room.users.length||0}} 人</p>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+         <div class="panel-footer">
+             <div class="row">
+                 <div class="col-xs-10">
+                     <input type="text" class="form-control" ng-model="name">
+                 </div>
+                 <div class="col-xs-2 text-center" >
+                     <button class="btn btn-primary" ng-click="create()">新建房间</button>
+                 </div>
+             </div>
+         </div>
+     </div>
